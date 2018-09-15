@@ -1,0 +1,31 @@
+- start_time = Time.current
+h1 Listing posts
+h5 = @posts.count
+= link_to('Export csv', export_csv_posts_path)
+table
+  thead
+    tr
+      th Title
+      th Body
+      th User
+      th
+      th
+      th
+
+  tbody
+    - @posts.each do |post|
+      tr
+        td = post.title
+        td = post.body
+        td = post.user.email
+        td = link_to 'Show', post
+        td = link_to 'Edit', edit_post_path(post)
+        td = link_to 'Destroy', post, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Post', new_post_path
+- end_time = Time.current
+
+h2
+  = end_time - start_time

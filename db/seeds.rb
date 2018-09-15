@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+user_id = User.last.id
+10_000.times do |index|
+    print '.'
+    Post.create(title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph, user_id: user_id)
+end

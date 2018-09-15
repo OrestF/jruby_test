@@ -20,9 +20,15 @@ gem 'slim-rails'
 gem 'devise'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.1.3'
+gem 'sidekiq'
 
 group :development do
   gem 'listen'
+end
+
+group :development, :test do
+  gem 'faker'
+  gem 'pry'
 end
 
 
