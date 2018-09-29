@@ -1,13 +1,13 @@
 default: &default
-  adapter: jdbcpostgresql
+  adapter: postgresql
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
   # url: postgresql://jruby_test:password@orest:5432/jruby_test?encoding=utf8&pool=5&timeout=5000
   database: jruby_test_development
-  username: postgres
-  password: password
+  username: 
+  password: 
 
 test:
   <<: *default

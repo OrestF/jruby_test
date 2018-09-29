@@ -3,8 +3,9 @@ class PostsController < ApplicationController
 
   def export_csv
     # ::PostsExporter.new.export_into_csv
-    job_id = PostsExporterJob.perform_later
-    puts "_____________________#{job_id}"
+    # job_id = PostsExporterJob.perform_later
+    # puts "_____________________#{job_id}"
+    ::PostsExporter.new.export_into_csv
     redirect_to posts_path 
   end
 
